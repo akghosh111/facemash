@@ -69,6 +69,16 @@ def index():
     
     return render_template("index.html", image1=image1, image2=image2)
 
+
+@app.route("/leaderboard")
+def leaderboard():
+    # Retrieve images sorted by Elo rating in descending order
+    images = Image.query.order_by(Image.elo_rating.desc()).all()
+    
+    # Render the leaderboard template with the images data
+    return render_template("leaderboard.html", images=images)
+
+
 # Start the Flask application
 if __name__ == "__main__":
     app.run(debug=True)

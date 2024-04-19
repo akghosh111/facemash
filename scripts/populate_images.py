@@ -2,8 +2,14 @@ from app import db, Image
 
 
 image_urls = [
-    'static/images/image1.jpg',
-    'static/images/image2.jpg',
+    'static/images/ana.jpg',
+    'static/images/dakota.jpg',
+    'static/images/emma.jpg',
+    'static/images/jennifer.jpg',
+    'static/images/kate.jpg',
+    'static/images/natalie.jpg',
+    'static/images/alexandra.png',
+    
     
 ]
 
