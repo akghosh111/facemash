@@ -22,19 +22,19 @@
 .sub {
     text-align: center;
     padding: 20px;
-    
+
 }
 
 .main {
     text-align: center;
 }
 
-.image-vote{
+.image-vote {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 40px;
-    
-    
+
+
 }

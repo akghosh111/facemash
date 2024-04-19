@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facemash</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="header">
         <h1>FACEMASH</h1>
@@ -16,15 +18,28 @@
     <div class="main">
         <h1>Who's hotter? Click to Choose.</h1>
         <div class="image-vote">
-            <div class="imgsec1">
-                <img src="https://placehold.co/2400x3000" width="240px" alt="">
-            </div>
+            <form method="POST" action="/">
+                <div>
+                    <input type="hidden" name="voted_image" value="{{ image1.id }}">
+                    <input type="hidden" name="image1_id" value="{{ image1.id }}">
+                    <input type="hidden" name="image2_id" value="{{ image2.id }}">
+                    <img src="{{ image1.url }}" alt="Image 1" width="200" style="cursor: pointer;"
+                        onclick="this.parentElement.submit();">
+                </div>
+            </form>
             OR
-            <div class="imgsec2">
-                <img src="https://placehold.co/2400x3000" width="240px" alt="">
-            </div>
+            <form method="POST" action="/">
+                <div>
+                    <input type="hidden" name="voted_image" value="{{ image2.id }}">
+                    <input type="hidden" name="image1_id" value="{{ image1.id }}">
+                    <input type="hidden" name="image2_id" value="{{ image2.id }}">
+                    <img src="{{ image2.url }}" alt="Image 2" width="200" style="cursor: pointer;"
+                        onclick="this.parentElement.submit();">
+                </div>
+            </form>
         </div>
     </div>
-    
+
 </body>
+
 </html>
