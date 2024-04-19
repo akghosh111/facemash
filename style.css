@@ -5,11 +5,20 @@
 
 .header{
     height: 10vh;
-    background-color: red;
+    background-color: rgb(192, 7, 7);
     color: white;
 }
 
 .header h1{
     text-align: center;
     padding: 4px;
+}
+
+.sub{
+    text-align: center;
+    padding: 20px;
+}
+
+.main{
+    text-align: center;
 }
