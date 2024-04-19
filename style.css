@@ -1,24 +1,40 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    font-family: klavika-web, sans-serif;
+    font-style: normal;
 }
 
-.header{
+.header {
     height: 10vh;
     background-color: rgb(192, 7, 7);
     color: white;
 }
 
-.header h1{
+.header h1 {
     text-align: center;
-    padding: 4px;
+    padding: 10px;
+    font-family: klavika-web, sans-serif;
+    font-style: normal;
+    font-weight: 600;
 }
 
-.sub{
+.sub {
     text-align: center;
     padding: 20px;
+    
 }
 
-.main{
+.main {
     text-align: center;
+}
+
+.image-vote{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+    
+    
 }
