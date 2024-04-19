@@ -20,21 +20,15 @@
         <div class="image-vote">
             <form method="POST" action="/">
                 <div>
-                    <input type="hidden" name="voted_image" value="{{ image1.id }}">
                     <input type="hidden" name="image1_id" value="{{ image1.id }}">
                     <input type="hidden" name="image2_id" value="{{ image2.id }}">
+                    <input type="hidden" name="voted_image_id" id="voted_image_id" value="">
+
                     <img src="{{ image1.url }}" alt="Image 1" width="200" style="cursor: pointer;"
-                        onclick="this.parentElement.submit();">
-                </div>
-            </form>
-            OR
-            <form method="POST" action="/">
-                <div>
-                    <input type="hidden" name="voted_image" value="{{ image2.id }}">
-                    <input type="hidden" name="image1_id" value="{{ image1.id }}">
-                    <input type="hidden" name="image2_id" value="{{ image2.id }}">
+                        onclick="vote({{ image1.id }})">
+                    <span>OR</span>
                     <img src="{{ image2.url }}" alt="Image 2" width="200" style="cursor: pointer;"
-                        onclick="this.parentElement.submit();">
+                        onclick="vote({{ image2.id }})">
                 </div>
             </form>
         </div>
@@ -43,7 +37,15 @@
     <div class="footer">
         <!-- <p>Show <a href="leaderboard.html">leaderboard</a></p> -->
     </div>
+    <script>
+        function vote(imageId) {
+            // Set the voted image ID in the hidden input
+            document.getElementById('voted_image_id').value = imageId;
 
+            // Submit the form
+            document.querySelector('form').submit();
+        }
+    </script>
 </body>
 
 </html>
