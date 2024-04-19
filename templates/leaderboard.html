@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Leaderboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
     <h1>Leaderboard</h1>
+
     <table>
         <thead>
             <tr>
-                <th>Rank</th>
                 <th>Image</th>
-                <th>Rating</th>
+                <th>URL</th>
+                <th>Elo Rating</th>
             </tr>
         </thead>
         <tbody>
-            {% for index, image in enumerate(images, start=1) %}
+            {% for image in images %}
             <tr>
-                <td>{{ index }}</td>
-                <td><img src="{{ url_for('static', filename=image.url) }}" alt="Image {{ image.id }}" width="100"></td>
+                <td><img src="{{ image.url }}" alt="Image" style="max-width: 100px;"></td>
+                <td>{{ image.url }}</td>
                 <td>{{ image.elo_rating }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
 
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
 </html>
